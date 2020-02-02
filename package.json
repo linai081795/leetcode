@@ -1,0 +1,48 @@
+{
+  "name": "test-git",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commit": "git-cz && git push",
+    "release": "release-it",
+    "changelog": "conventional-changelog -p custom-config -i CHANGELOG.md -s -r 0"
+
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "commitizen": "^4.0.3",
+    "conventional-changelog-cli": "^2.0.31",
+    "cz-conventional-changelog": "^3.0.2",
+    "husky": "^4.0.10",
+    "lint-staged": "^10.0.1",
+    "release-it": "^12.4.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    },
+    "lint-staged": {
+      "src/*_/_.{js,ts}": [
+        "npm run lint",
+        "git add"
+      ]
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "changelog": {
+    "bugsUrl": "https://redmine.example.com/issues/",
+    "emojis": true,
+    "authorName": true,
+    "authorEmail": true
+  },
+  "dependencies": {
+    "conventional-changelog-custom-config": "^0.3.1"
+  }
+}
