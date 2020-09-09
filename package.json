@@ -8,17 +8,16 @@
     "commit": "git-cz && git push",
     "release": "release-it",
     "changelog": "conventional-changelog -p custom-config -i CHANGELOG.md -s -r 0"
-
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "commitizen": "^4.0.3",
-    "conventional-changelog-cli": "^2.0.31",
-    "cz-conventional-changelog": "^3.0.2",
-    "husky": "^4.0.10",
-    "lint-staged": "^10.0.1",
-    "release-it": "^12.4.3"
+    "commitizen": "^4.2.1",
+    "conventional-changelog-cli": "^2.1.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.3.0",
+    "release-it": "^14.0.2"
   },
   "husky": {
     "hooks": {
@@ -26,7 +25,6 @@
     },
     "lint-staged": {
       "src/*_/_.{js,ts}": [
-        "npm run lint",
         "git add"
       ]
     }
